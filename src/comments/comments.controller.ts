@@ -1,5 +1,6 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post, Body } from '@nestjs/common';
 import { CommentsService } from './comments.service';
+import { CreateCommentDto } from './create-comment-dto';
 
 @Controller('comments')
 export class CommentsController {
@@ -9,8 +10,21 @@ export class CommentsController {
   getComments() {
     return {
       status: 'success',
-      data: this.commentsService.getComments(),
+      data: {
+        comments: this.commentsService.getComments(),
+      },
       error: null,
     }
+  }
+
+  @Post()
+  createComment(@Body() createCommentDto: CreateCommentDto) {
+    const comment = this.commentsService.createComment(createCommentDto);
+
+    return {
+      status: 'success',
+      data: comment,
+      error: null,
+    };
   }
 }
