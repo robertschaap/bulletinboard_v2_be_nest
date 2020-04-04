@@ -7,11 +7,11 @@ export class CommentsController {
   constructor(private commentsService: CommentsService) {}
 
   @Get()
-  getComments() {
+  async getComments() {
     return {
       status: 'success',
       data: {
-        comments: this.commentsService.getComments(),
+        comments: await this.commentsService.getComments(),
       },
       error: null,
     }
