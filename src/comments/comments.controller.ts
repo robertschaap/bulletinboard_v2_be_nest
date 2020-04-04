@@ -3,6 +3,7 @@ import { CommentsService } from './comments.service';
 import { CreateCommentDto } from './create-comment-dto';
 
 @Controller('comments')
+@UseFilters(new HttpExceptionFilter())
 export class CommentsController {
   constructor(private commentsService: CommentsService) {}
 
