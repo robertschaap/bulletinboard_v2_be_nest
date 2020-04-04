@@ -5,9 +5,9 @@ import { IsOptional, IsIn, IsNotEmpty } from "class-validator";
 export class GetCommentsFilterDto {
   @IsOptional()
   @IsIn([CommentSortOrder.ASCENDING, CommentSortOrder.DESCENDING])
-  sort: string;
+  sort: CommentSortOrder;
 
   @IsOptional()
   @IsNotEmpty()
-  offset: CommentSortOrder;
+  offset: number;
 }
