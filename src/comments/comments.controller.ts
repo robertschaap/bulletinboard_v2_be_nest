@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body, UseFilters } from '@nestjs/common';
+import { Controller, Get, Post, Body, UseFilters, Query, ValidationPipe } from '@nestjs/common';
 import { CommentsService } from './comments.service';
 import { CreateCommentDto } from './create-comment-dto';
 import { HttpExceptionFilter } from 'src/htttp-exception.filter';
+import { GetCommentsFilterDto } from './get-comments-filter.dto';
 
 // TODO: move this into a decorator under the controller and handle errors
 const ApiSuccess = <T>(data: T) => ({
@@ -9,16 +10,15 @@ const ApiSuccess = <T>(data: T) => ({
   data,
   error: 'null',
 });
-
 @Controller('comments')
 @UseFilters(new HttpExceptionFilter())
 export class CommentsController {
   constructor(private commentsService: CommentsService) {}
 
   @Get()
-  async getComments() {
+  async getComments(@Query(ValidationPipe) filterDto: GetCommentsFilterDto ) {
     return ApiSuccess({
-      comments: await this.commentsService.getComments(),
+      comments: await this.commentsService.getComments(filterDto),
     });
   }
 
