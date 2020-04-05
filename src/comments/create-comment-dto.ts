@@ -1,8 +1,15 @@
-import { Comment } from './comments.model';
+import { IsNotEmpty } from "class-validator";
 
-export class CreateCommentDto implements Omit<Comment, 'id'> {
+export class CreateCommentDto {
+  @IsNotEmpty()
   avatar: string;
+
+  @IsNotEmpty()
   body: string;
+
+  @IsNotEmpty()
   name: string;
+
+  @IsNotEmpty()
   title: string;
 }
