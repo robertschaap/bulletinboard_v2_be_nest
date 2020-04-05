@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Comment } from './comment.entity';
-import { CreateCommentDto } from './create-comment-dto';
+import { CreateCommentDto } from './create-comment.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CommentRepository } from './comment.repository';
 import { GetCommentsFilterDto } from './get-comments-filter.dto';

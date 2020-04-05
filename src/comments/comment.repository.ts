@@ -1,6 +1,6 @@
 import { EntityRepository, Repository } from "typeorm";
 import { Comment } from './comment.entity';
-import { CreateCommentDto } from "./create-comment-dto";
+import { CreateCommentDto } from "./create-comment.dto";
 import { GetCommentsFilterDto } from "./get-comments-filter.dto";
 
 @EntityRepository(Comment)

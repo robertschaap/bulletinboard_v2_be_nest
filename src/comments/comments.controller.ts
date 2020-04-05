@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, UseFilters, Query, ValidationPipe } from '@nestjs/common';
 import { CommentsService } from './comments.service';
-import { CreateCommentDto } from './create-comment-dto';
+import { CreateCommentDto } from './create-comment.dto';
 import { HttpExceptionFilter } from 'src/htttp-exception.filter';
 import { GetCommentsFilterDto } from './get-comments-filter.dto';
 import { ApiResponse } from 'src/apiresponse';
