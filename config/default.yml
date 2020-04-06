@@ -1,0 +1,11 @@
+server:
+  port: 4000
+
+db:
+  type: 'postgres'
+  host: 'localhost'
+  port: 5432
+  username: 'postgres'
+  password: 'password'
+  database: 'bulletinboard'
+  synchronize: false
