@@ -10,10 +10,10 @@ export class CommentRepository extends Repository<Comment> {
     const query = this.createQueryBuilder('comment');
 
     const comments = await query
-    .orderBy('comment.id', sort === 'asc' ? 'ASC' : 'DESC')
-    .limit(4)
-    .offset(offset * 4)
-    .getMany();
+      .orderBy('comment.id', sort === 'asc' ? 'ASC' : 'DESC')
+      .limit(4)
+      .offset(offset * 4)
+      .getMany();
 
     return comments;
   }
