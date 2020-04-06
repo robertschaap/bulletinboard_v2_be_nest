@@ -1,7 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { CommentsService } from './comments.service';
 import { CommentRepository } from './comment.repository';
-import { GetCommentsFilterDto } from './get-comments-filter.dto';
 import { Comment } from './comment.entity';
 
 const mockCommentRepository = () => ({
