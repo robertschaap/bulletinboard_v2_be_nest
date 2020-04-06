@@ -1,12 +1,14 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { CommentsController } from '../comments.controller';
+import { CommentsController } from './comments.controller';
+import { CommentsService } from './comments.service';
 
-xdescribe('Comments Controller', () => {
+describe('CommentsController', () => {
   let controller: CommentsController;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [CommentsController],
+      providers: [CommentsService],
     }).compile();
 
     controller = module.get<CommentsController>(CommentsController);
