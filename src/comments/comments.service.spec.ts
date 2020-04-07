@@ -26,7 +26,7 @@ describe('CommentsService', () => {
     commentRepository = module.get(CommentRepository);
   });
 
-  it('should getComments', async () => {
+  it('should get an array of comments', async () => {
     const mockComments = [{ id: 1, title: 'title', body: 'body', avatar: 'avatar', name: 'name' }] as Comment[];
     const mockFilters = { sort: 'asc', offset: 0 };
 
