@@ -37,4 +37,14 @@ describe('CommentsService', () => {
     expect(commentRepository.getComments).toHaveBeenCalledWith(mockFilters);
     expect(result).toEqual(mockComments);
   });
+
+  it('should create a comment', async () => {
+    const mockComment = { id: 1, title: 'title', body: 'body', avatar: 'avatar', name: 'name' } as Comment;
+    const mockCommentDto = { title: 'title', body: 'body', avatar: 'avatar', name: 'name' }
+
+    commentRepository.createComment.mockResolvedValue(mockComment);
+
+    const result = await commentsService.createComment(mockCommentDto);
+    expect(result).toEqual(mockComment);
+  });
 });
