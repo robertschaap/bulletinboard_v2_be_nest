@@ -5,6 +5,7 @@ import { Comment } from './comment.entity';
 
 const mockCommentRepository = () => ({
   getComments: jest.fn(),
+  createComment: jest.fn(),
 });
 
 describe('CommentsService', () => {
